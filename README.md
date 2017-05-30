@@ -15,6 +15,15 @@ The objective is to set up an Ansible role to change automaticly the HP iLo pass
 
 With the recent cyber-attacks events, we have to put in place all the means at our disposal to harden the servers of our customers.
 
+## Role Variables
+You need to put path of hponcfg/ipmitool binaries
+
+```yml
+---
+hp_bin: /sbin/hponcfg
+oracle_bin: /usr/bin/ipmitool
+```
+
 ## Example Playbook
 
 
@@ -23,13 +32,15 @@ With the recent cyber-attacks events, we have to put in place all the means at o
 - hosts: all
   become_method: sudo
   vars_files:
-    - secrets/yourfile.secrets
+    - secrets/yourfile.secrets.yml
   vars:
     passwdHPiLo: "{{ vault_HP_ilo_hpadmin_pwd }}"
     passwdORACLEiLo: "{{ vault_ORACLE_ilo_admin_pwd }}"
   roles:
      - {role: iLo , tags: iLo-change }
 ```
+
+
 ## Author Information
 Made with passion by Jérémie CUADRADO [Linkedin](http://lnked.in/jcua)
 

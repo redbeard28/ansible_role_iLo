@@ -14,6 +14,31 @@ Context
 =======
 Avec les évenements récents concernant les cyber-attaques, nous nous devons de mettre en place tous les moyens à notre dispositions pour durcir les serveurs de nos clients.
 
+## Role Variables
+Vous devez paramétrer les variables pour l'emplacement des binaires hponcfg/ipmitool
+
+```yml
+---
+hp_bin: /sbin/hponcfg
+oracle_bin: /usr/bin/ipmitool
+```
+
+## Example Playbook
+
+
+```yml
+---
+- hosts: all
+  become_method: sudo
+  vars_files:
+    - secrets/yourfile.secrets.yml
+  vars:
+    passwdHPiLo: "{{ vault_HP_ilo_hpadmin_pwd }}"
+    passwdORACLEiLo: "{{ vault_ORACLE_ilo_admin_pwd }}"
+  roles:
+     - {role: iLo , tags: iLo-change }
+```
+
 
 ## Information sur l'auteur
 Made with passion by Jérémie CUADRADO [Linkedin](http://lnked.in/jcua)
