@@ -1,0 +1,14 @@
+- name: Changing iLo password
+  shell: |
+    echo '<RIBCL VERSION="2.0">
+        <LOGIN USER_LOGIN="IdonTcare" PASSWORD="NONEEDS">
+                <USER_INFO MODE="write">
+                        <MOD_USER USER_LOGIN="hpadmin">
+                        <PASSWORD value="{{ passwdHPiLo }}"/>
+                        </MOD_USER>
+                </USER_INFO>
+         </LOGIN>
+        </RIBCL>' > /tmp/change-passwd.xml
+
+- name: Configure HP iLO using change-passwd.xml
+  command: hponcfg -f /tmp/change-passwd.xml
