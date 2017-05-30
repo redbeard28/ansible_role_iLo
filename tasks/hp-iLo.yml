@@ -1,3 +1,11 @@
+- stat:
+    path: {{ hp_bin }}
+  register: status_hponcfg
+
+- debug:
+    msg: "hponcfg does not exist"
+  when: status_hponcfg.stat.exists == False
+
 - name: Changing iLo password
   shell: |
     echo '<RIBCL VERSION="2.0">
@@ -9,6 +17,8 @@
                 </USER_INFO>
          </LOGIN>
         </RIBCL>' > /tmp/change-passwd.xml
-
+  no_log: true
+  
 - name: Configure HP iLO using change-passwd.xml
   command: hponcfg -f /tmp/change-passwd.xml
+  when: status_hponcfg.stat.exists == True

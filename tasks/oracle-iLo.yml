@@ -1,0 +1,12 @@
+- stat:
+    path: {{ oracle_bin }}
+  register: status_ipmitool
+
+- debug:
+    msg: "ipmitool does not exist"
+  when: status_ipmitool.stat.exists == False
+
+- name: Change Oracle iLo password
+  command: /usr/bin/ipmitool user set password 0x02 "{{ passwdORACLEiLo }}"
+  when: status_ipmitool.stat.exists == True
+  no_log: true

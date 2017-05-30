@@ -1,3 +1,8 @@
 ---
 - include: hp-iLo.yml
-  tags: hp_ilo
+  when: site == "prod"
+  tags: passwd-ilo,hpilo
+
+- include: oracle-iLo.yml
+  when: site == "pilot"
+  tags: passwd-ilo,oracleilo

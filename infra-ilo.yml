@@ -2,7 +2,7 @@
 - hosts: all
   become_method: sudo
   vars_files:
-    - secrets/yourfile.secrets.yml
+    - secrets/{{site}}-secrets.yml
   vars:
     passwdHPiLo: "{{ vault_HP_ilo_hpadmin_pwd }}"
     passwdORACLEiLo: "{{ vault_ORACLE_ilo_admin_pwd }}"

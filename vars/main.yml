@@ -1,0 +1,3 @@
+---
+hp_bin: /sbin/hponcfg
+oracle_bin: /usr/bin/ipmitool
