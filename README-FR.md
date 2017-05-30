@@ -16,7 +16,7 @@ Avec les évenements récents concernant les cyber-attaques, nous nous devons de
 
 
 ## Information sur l'auteur
-Made with passion by Jérémie CUADRADO [Linkedin](https://fr.linkedin.com/in/jeremiecuadrado)
+Made with passion by Jérémie CUADRADO [Linkedin](http://lnked.in/jcua)
 
 ## Url vers la documentation complète en anglais...
 [Full documentation](http://ansible_role_iLo.readthedocs.io/en/latest/)

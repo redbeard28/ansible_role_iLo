@@ -31,7 +31,7 @@ With the recent cyber-attacks events, we have to put in place all the means at o
      - {role: iLo , tags: iLo-change }
 ```
 ## Author Information
-Made with passion by Jérémie CUADRADO [Linkedin](https://fr.linkedin.com/in/jeremiecuadrado)
+Made with passion by Jérémie CUADRADO [Linkedin](http://lnked.in/jcua)
 
 
 ## Link to the readthedocs web page...
