@@ -23,7 +23,7 @@ With the recent cyber-attacks events, we have to put in place all the means at o
 - hosts: all
   become_method: sudo
   vars_files:
-    - secrets/{{site}}-secrets.yml
+    - secrets/yourfile.secrets
   vars:
     passwdHPiLo: "{{ vault_HP_ilo_hpadmin_pwd }}"
     passwdORACLEiLo: "{{ vault_ORACLE_ilo_admin_pwd }}"

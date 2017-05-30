@@ -6,6 +6,7 @@ You have to install:
 2. ansible
 3. hponcfg (hp binaries)
 4. ansible user must have sudo access
+5. An ansible-vault file in path PATH/ansible/playbooks/secrets/yourfile.secrets.yml
 
 
 ## Clone from Github repo
